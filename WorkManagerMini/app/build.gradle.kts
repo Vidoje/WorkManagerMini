@@ -47,5 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.workManager)
-    implementation(libs.workRuntime)
+//    implementation(libs.workRuntime)
 }

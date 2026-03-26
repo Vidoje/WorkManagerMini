@@ -9,7 +9,7 @@ appcompat = "1.7.1"
 material = "1.13.0"
 activity = "1.13.0"
 constraintlayout = "2.2.1"
-workManager = "2.4.0"
+workManager = "2.11.2"
 workRuntime = "1.0.1"
 
 [libraries]
