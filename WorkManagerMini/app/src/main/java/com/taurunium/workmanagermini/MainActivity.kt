@@ -21,9 +21,15 @@ class MainActivity : AppCompatActivity() {
 
         val oneTimeWorkRequest = OneTimeWorkRequest.Builder(FirstWorker::class.java).
             setConstraints(constraints).build()
+
+        val secondWorkRequest = OneTimeWorkRequest.Builder(SecondWorker::class.java)
+            .setConstraints(constraints).build()
+
+
+
         val btnClick = findViewById<Button>(R.id.btnClick)
         btnClick.setOnClickListener {
-            WorkManager.getInstance(this).enqueue(oneTimeWorkRequest)
+            WorkManager.getInstance(this).beginWith(oneTimeWorkRequest).then(secondWorkRequest).enqueue()
         }
     }
 }
