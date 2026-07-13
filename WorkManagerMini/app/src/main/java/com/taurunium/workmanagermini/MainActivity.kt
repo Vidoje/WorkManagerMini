@@ -10,6 +10,7 @@ import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
+import androidx.work.impl.WorkManagerImpl
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnClick = findViewById<Button>(R.id.btnClick)
         btnClick.setOnClickListener {
+            //WorkManager.getInstance(this).enqueue(oneTimeWorkRequest)
             WorkManager.getInstance(this).beginWith(oneTimeWorkRequest).then(secondWorkRequest).enqueue()
         }
     }
